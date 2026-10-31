@@ -1,0 +1,12 @@
+{
+ "cci_blocks": 73,
+ "cci_paras": 112,
+ "cci_live_ok": 112,
+ "cci_local_ok": 112,
+ "creed_ok": 3,
+ "ws_paras": 7,
+ "ws_ok": 7,
+ "fail": [],
+ "prose_quotes": 367,
+ "prose_unmatched": []
+}
