@@ -102,6 +102,7 @@ function build(box){
     if(p.d) c.bindPopup("<b>"+p.n+"</b><br>"+p.d);
   });
   var b=cfg.bounds;
+  if(cfg.minZoom) map.setMinZoom(cfg.minZoom);
   if(b) map.fitBounds(b,{padding:[24,24],maxZoom:cfg.maxZoom||8});
   else {
     var all=[];
@@ -110,7 +111,7 @@ function build(box){
     if(all.length) map.fitBounds(L.latLngBounds(all).pad(.18),{padding:[24,24],maxZoom:cfg.maxZoom||8});
     else map.setView([36.2,28],5);
   }
-  var start=(function(){try{return localStorage.getItem("acts-tiles")||"osm";}catch(e){return "carto-v";}})();
+  var start=(function(){try{return localStorage.getItem("acts-tiles")||"osm";}catch(e){return "osm";}})();
   if(navigator.onLine===false){note(box,"目前离线：请使用示意图。打开网络后可点选底图来源。",1);}
   else tiles(map,box,start);
   $$(".srcs button",box).forEach(function(btn){

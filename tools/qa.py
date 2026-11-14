@@ -73,7 +73,19 @@ async def interact(pg):
     for b in lbs[:2]:
         try: await b.click(); await pg.wait_for_timeout(80)
         except Exception: pass
-    await pg.evaluate("document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
+    # animation play / scrub
+    pl=await pg.query_selector(".anim-play")
+    if pl:
+        try:
+            await pl.click(); await pg.wait_for_timeout(120)
+            scr=await pg.query_selector(".anim-scrub")
+            if scr:
+                await scr.evaluate("e=>{e.value=60;e.dispatchEvent(new Event('input'));e.dispatchEvent(new Event('change'))}")
+                await pg.wait_for_timeout(80)
+            await pl.click(); await pg.wait_for_timeout(80)
+        except Exception:
+            pass
+        await pg.evaluate("document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
     await pg.wait_for_timeout(200)
 
 async def main():

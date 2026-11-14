@@ -32,6 +32,7 @@ def sources(stats):
     b.append("""<h2 id="s4">🗂️ 版本</h2><div class="tbl"><table><thead><tr><th>版本</th><th>日期（台北时间）</th><th>说明与当时链接</th></tr></thead><tbody>
 <tr><td>v1.0.0</td><td>2026-10-31</td><td>首次发布：28 章深读、圣约、导论、时间线与离线示意图、十二专题、三大信经与三项联合信条、记忆自测。仓库标记 <code>v1.0.0-20261031</code> 可随时恢复。当时镜像：<a href="https://07-je-grok-love-personal-20260928.github.io/Acts-GROKstudy/">GitHub Pages</a> · <a href="https://acts-20261031-v1-grokstudy.surge.sh">surge v1</a> · <a href="https://acts-20261031-v1-grokstudy.netlify.app">Netlify v1</a></td></tr>
 <tr><td>v2.0.0</td><td>2026-11-14</td><td>地图对（离线概念图＋多源实景图与自动回退）、新「地理·历史·文化」专页、笔记标记与标注框强化、滚动与渲染性能。标签 <code>v2.0.0-20261114</code>。镜像仍保留：<a href="https://acts-20261114-v2-grokstudy.surge.sh">surge v2</a> · <a href="https://acts-20261114-v2-grokstudy.netlify.app">Netlify v2</a>。</td></tr>
-<tr><td>v3.0.0</td><td>2026-11-14</td><td>三级可折叠目录（一级中文序号）、横向拖拽调宽（记忆宽度、双击复位）、滚动高亮当前节；去掉滚动层毛玻璃与默认 Lenis，改用原生滚动、预取与视图过渡。标签 <code>v3.0.0-20261114</code>。当前镜像见 README。</td></tr>
+<tr><td>v3.0.0</td><td>2026-11-14</td><td>三级可折叠目录（一级中文序号）、横向拖拽调宽（记忆宽度、双击复位）、滚动高亮当前节；去掉滚动层毛玻璃与默认 Lenis，改用原生滚动、预取与视图过渡。标签 <code>v3.0.0-20261114</code>。镜像仍保留：见 README。</td></tr>
+<tr><td>v3.1.0</td><td>2026-11-14</td><td>新增专题地图（五旬节万邦、腓利、扫罗、彼得、安提阿分散、三次旅行编号站、受审路线、船难与风向、厄纳齐亚/亚比亚大道、亚细亚七教会、圣城平面）；可播放/暂停/拖动的路线与示意图动画、进展报告柱状图、时间线回放、会议与受审流程、船难六幕；逐章讲章剖析与难点补强。标签 <code>v3.1.0-20261114</code>。当前镜像见 README。</td></tr>
 </tbody></table></div>""")
     return "".join(b)

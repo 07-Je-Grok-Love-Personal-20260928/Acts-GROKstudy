@@ -24,7 +24,11 @@ CITY = {
  "syracuse":"停留三天（徒28）","puteoli":"弟兄留住七天（徒28）",
  "rome":"软禁两年，放胆传道（徒28）","alexandria":"亚波罗的家乡；粮船出发地（徒18:24、27:6）",
  "cappadocia":"五旬节听众之一（徒2:9）","pontus":"五旬节听众；亚居拉家乡（徒2:9；18:2）",
- "sidon":"徒27：犹流宽待保罗","myra":"徒27：换船"
+ "sidon":"徒27：犹流宽待保罗","myra":"徒27：换船",
+ "arabia":"保罗曾往阿拉伯（加1:17）","azotus":"腓利走过亚锁都各城（徒8:40）",
+ "sardis":"亚细亚七教会之一（启3:1）","philadelphia":"亚细亚七教会之一（启3:7）",
+ "appforum":"亚比亚大道驿站，罗马弟兄来迎（徒28:15）","threetaverns":"亚比亚大道驿站（徒28:15）",
+ "dyrrhachium":"厄纳齐亚大道西端（亚得里亚海）"
 }
 
 def _ll(k):
@@ -88,7 +92,7 @@ def path_schematic(title, stops, color="#4fb3ff", kind="land", caption=""):
 </defs>
 {sea}
 <text x="16" y="28" fill="#ffd36b" font-size="15" font-weight="700">{esc(title)}</text>
-<path class="sch-route" d="{d}" fill="none" stroke="{color}" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="10 8"/>
+<path class="sch-route draw" d="{d}" fill="none" stroke="{color}" stroke-width="3.4" stroke-linecap="round"/>
 <circle r="7" fill="#ff6b8b" stroke="#fff" stroke-width="2"><animateMotion dur="{max(6,n)}s" repeatCount="indefinite" path="{d}"/></circle>
 {nodes}
 </svg>'''
@@ -207,7 +211,7 @@ def mappair(mid, title, schematic, hist, play=True, caption="概念示意图（�
     return f'''<section class="mappair" id="mp-{mid}">
 <div class="mph"><h3 id="mp-{mid}-t">{esc(title)}</h3></div>
 <div class="mpgrid">
-<figure class="schematic glass">{schematic}<figcaption>{esc(caption)}</figcaption></figure>
+<figure class="schematic glass">{schematic}<div class="anim-ctrl" data-anim="route"><button type="button" class="btn sm anim-play" aria-label="播放或暂停路线动画">▶ 播放</button><input type="range" class="anim-scrub" min="0" max="100" value="0" aria-label="路线进度"><span class="anim-pct">0%</span></div><figcaption>{esc(caption)}</figcaption></figure>
 <div class="livebox glass" data-map="{esc(mid)}">
   <div class="mapbar"><span class="mapbar-l">在线实景地图</span><div class="srcs" role="group" aria-label="底图来源">{btns}</div>{pl}</div>
   <div class="lmap" role="region" aria-label="{esc(title)} 交互地图"></div>
@@ -337,5 +341,11 @@ def all_cfgs(chapters):
 
 def dump_js(path, chapters):
     cfgs=all_cfgs(chapters)
+    from maps_extra import extra_cfgs
+    cfgs.update(extra_cfgs())
     open(path,"w",encoding="utf-8").write("window.ACTS_MAPS="+json.dumps(cfgs,ensure_ascii=False,separators=(",",":"))+";\n")
     return len(cfgs)
+
+def thematic_pair(mid):
+    from maps_extra import thematic_pair as _tp
+    return _tp(mid)

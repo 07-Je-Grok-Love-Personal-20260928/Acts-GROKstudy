@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-from common import md, esc, cq, wq, verse_card, vtext, callout
+from common import md, md_rich, esc, cq, wq, verse_card, vtext, callout
 from geo import chmap
-from maps_ui import chapter_pair
+from maps_ui import chapter_pair, thematic_pair
+from anim_ui import render_anim
 SEC = {"jer":("耶路撒冷 · 1–7 章","#f5b942","jerusalem.html"),"sam":("犹太 · 撒马利亚 · 8–12 章","#3fd39a","samaria.html"),
        "mis":("宣教旅行 · 13–19 章","#4fb3ff","missions.html"),"rom":("往罗马 · 20–28 章","#ff6b8b","rome.html")}
 def flow(steps, end):
@@ -22,11 +23,20 @@ def chapter(c):
     confs="".join(conf(x) for x in c.get("conf",[]))
     apps="".join(f'<li>{md(a)}</li>' for a in c["app"])
     hard_blk=f'<aside class="co co-hard"><h4 id="{i}-hd">⚠️ 难点 · 点开看改革宗解答</h4>{hards}</aside>' if hards else ''
+    bits=[]
+    for mid in c.get("xmaps") or []:
+        bits.append(thematic_pair(mid))
+    for aid in c.get("anims") or []:
+        bits.append(render_anim(aid))
+    if c.get("speech"):
+        bits.append('<h3 id="'+i+'-sp">🎤 讲章剖析</h3><div class="card glass speech">'+md_rich(c["speech"])+'</div>')
+    extras="".join(bits)
     return f'''<section class="ep" id="{i}" style="--gc:{col}">
 <h2 id="{i}-t" class="ep-h" data-toc="第 {c["no"]} 章 · {c["t"]}"><span class="ei">{c["ic"]}</span>第 {c["no"]} 章 · {c["t"]} <small>{c["ref"]} · {sname}</small></h2>
 <div class="ep-banner glass reveal"><div class="kwbox"><span class="kwl">钥字</span><span class="kw">{c["kw"]}</span></div><p class="core">💎 {md(c["core"])}</p>{verse_card(c["kv"])}</div>
 <div class="facts">{fx}</div>
 {chapter_pair(c)}
+{extras}
 <h3 id="{i}-st">📖 故事线：发生了什么</h3><div class="card glass"><p>{md(c["story"])}</p></div>{sbar(c["ol"])}<ol class="outline">{ol}</ol>
 <h3 id="{i}-bg">🏺 真实背景与文化</h3><div class="card glass culture"><p>{md(c["bg"])}</p></div>
 <h3 id="{i}-why">🔗 前因后果</h3>{flow(c["why"], c["res"])}

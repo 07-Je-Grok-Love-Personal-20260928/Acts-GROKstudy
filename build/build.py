@@ -4,11 +4,12 @@ sys.path.insert(0, os.path.dirname(__file__))
 from common import page, QUOTES, VER, DATE, md
 from acts_a import CH_A; from acts_b import CH_B; from acts_c import CH_C; from acts_d import CH_D
 from chap import chapter, mindtree, gtable
-import geo, p_whole, p_intro, p_hist, p_doc, p_creed, p_mem, p_misc, p_cult, maps_ui
+import geo, p_whole, p_intro, p_hist, p_doc, p_creed, p_mem, p_misc, p_cult, maps_ui, enrich
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); D = os.path.join(ROOT, "docs")
 os.makedirs(os.path.join(D, "assets", "geo"), exist_ok=True)
 geo.base_svg(os.path.join(D, "assets", "geo", "med.svg"))
 CH = CH_A + CH_B + CH_C + CH_D
+enrich.apply(CH)
 assert [c["no"] for c in CH] == list(range(1, 29))
 nmaps=maps_ui.dump_js(os.path.join(D, "assets", "maps-data.js"), CH); print("maps", nmaps)
 def W(fn, html):

@@ -2,7 +2,7 @@
 import json, re, html as H
 from bible import verses
 CCI = "/workspace/cci"
-VER = "v3.0.0"; DATE = "2026-11-14"; ASSET_V = "20261114d"
+VER = "v3.1.0"; DATE = "2026-11-14"; ASSET_V = "20261114e"
 def strip(t): return re.sub(r'\^\d+', '', t)
 _c = json.load(open(f"{CCI}/creeds.json")); _h = json.load(open(f"{CCI}/heidelberg.json"))
 _b = json.load(open(f"{CCI}/belgic.json")); _d = json.load(open(f"{CCI}/dort.json"))
@@ -60,6 +60,23 @@ def md(s):
     s = esc(s).replace("&quot;", "\"")
     def vref(m):
         r = H.unescape(m.group(1)); t = vtext(r)
+        if t: return f'<button type="button" class="vs" data-t="{esc(t)}">{esc(r)}</button>'
+        return f'<span class="vs0">{esc(r)}</span>'
+    s = re.sub(r'\{\{(.+?)\}\}', vref, s)
+    s = re.sub(r'\*\*(.+?)\*\*', r'<b class="key">\1</b>', s)
+    s = re.sub(r'!!(.+?)!!', r'<span class="hard">\1</span>', s)
+    s = re.sub(r'==(.+?)==', r'<span class="cov">\1</span>', s)
+    s = re.sub(r'\[\[(.+?)\]\]', r'<span class="term">\1</span>', s)
+    s = re.sub(r'__(.+?)__', r'<mark class="hl">\1</mark>', s)
+    s = re.sub(r'~~(.+?)~~', r'<span class="mk-w">\1</span>', s)
+    s = re.sub(r'\+\+(.+?)\+\+', r'<span class="mk-d">\1</span>', s)
+    return s
+
+
+def md_rich(s):
+    """Like md(), but keep literal HTML (trusted generator content such as speech grids)."""
+    def vref(m):
+        r = m.group(1); t = vtext(r)
         if t: return f'<button type="button" class="vs" data-t="{esc(t)}">{esc(r)}</button>'
         return f'<span class="vs0">{esc(r)}</span>'
     s = re.sub(r'\{\{(.+?)\}\}', vref, s)
@@ -212,7 +229,7 @@ def page(fn, title, sub, body, hero_cls="", extra_head="", maps=False):
 {pn}
 <footer class="foot glass"><p>使徒行传深读 · acts-{DATE.replace("-","")}-{VER}-GROKstudy · 信经与信条引文逐字取自 <a href="https://ccifellowship.org/books/book-of-praise" target="_blank" rel="noopener">ccifellowship.org《敬拜手册》</a>（构建时程序核对）；经文为和合本。讲解、图表与口诀为本站学习整理。</p></footer>
 </main><button id="totop" class="fab" aria-label="回到顶部">↑</button>
-{maps_js}<script src="assets/app.js?v={ASSET_V}" defer></script></body></html>'''
+{maps_js}<script src="assets/anim.js?v={ASSET_V}" defer></script><script src="assets/app.js?v={ASSET_V}" defer></script></body></html>'''
 
 _W = json.load(open("/workspace/Westminster-Standards-GROKstudy/generator/data/standards.json"))
 def _ws(t): return re.sub(r'⟦\d+⟧', '', t)

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from common import md, esc, callout
 from geo import actsmap, JOURNEYS
-from maps_ui import mappair
+from maps_ui import mappair, thematic_pair
+from anim_ui import render_anim
 TL=[(30,"c","耶稣受死、复活；四十天显现；升天（徒1）","约主后 30 年（另说 33 年）"),(30,"c","五旬节圣灵降临，三千人受洗（徒2）",""),(31,"c","彼得约翰被捕；亚拿尼亚与撒非喇（徒3–5）","约 30–33"),
     (33,"c","选立七人；司提反殉道（徒6–7）","约 33–34"),(34,"c","大逼迫；腓利往撒马利亚、太监（徒8）",""),(34,"p","扫罗在大马士革路上归信（徒9）","约 33–35"),(37,"p","保罗首访耶路撒冷十五天，回大数（徒9:26-30；加1:18）","约 36–37"),
     (37,"w","卡利古拉继位（37–41）",""),(38,"c","彼得在吕大、约帕；哥尼流归主（徒9:32–10）","约 38–40"),(41,"w","革老丢继位（41–54）；亚基帕一世统治全犹太",""),(43,"c","安提阿教会；“基督徒”之名；巴拿巴请保罗来（徒11）","约 43–44"),
@@ -48,18 +49,19 @@ OFF=[("革老丢（Claudius）","皇帝","41–54","饥荒（11:28）；逐犹�
      ("革老丢·吕西亚","千夫长","—","救保罗出暴动（21–23）"),("亚拿尼亚（大祭司）","公会主席","47–59","命人打保罗的嘴（23:2）"),("迦玛列","公会教师","—","劝公会勿抵挡神（5:34）；保罗的老师（22:3）")]
 def build():
     b=[]
-    b.append('<h2 id="h1">一、时间线（主后 30–70）</h2><p class="note">年代为保守学者常用的近似值；定年锚点：亚基帕一世之死（44）、革老丢逐犹太人（49）、迦流铭文（51–52）、非斯都接任（约 59/60）。</p>'+timeline())
+    b.append('<h2 id="h1">一、时间线（主后 30–70）</h2><p class="note">年代为保守学者常用的近似值；定年锚点：亚基帕一世之死（44）、革老丢逐犹太人（49）、迦流铭文（51–52）、非斯都接任（约 59/60）。点播放可沿时间轴回放精选节点。</p>'+timeline()+render_anim('tlplay', items=[(30,'升天·五旬节','徒1–2'),(34,'司提反·扫罗','徒7–9'),(40,'哥尼流','徒10'),(44,'希律之死','徒12'),(49,'会议','徒15'),(52,'迦流','徒18'),(57,'被捕','徒21'),(60,'抵达罗马','徒28')]))
     b.append('<h3 id="h1b">📊 章节 × 年代</h3><figure class="glass gwrap">'+gantt()+'<figcaption>28 章覆盖约 32 年：前 12 章约 14 年，后 16 章约 16 年——保罗的旅程占了全书的一半以上篇幅。</figcaption></figure>')
-    b.append('<h2 id="h2">二、故事线：16 个场景</h2>'+story())
+    b.append('<h2 id="h1b">二、福音怎样长大：八次进展报告</h2>'+render_anim('growth'))
+    b.append('<h2 id="h2">三、故事线：16 个场景</h2>'+story())
     lg='<button class="lb on" data-l="j0" style="--c:#2dd4bf">早期扩展（徒1–12）</button>'+"".join(f'<button class="lb on" data-l="{j}" style="--c:{c}">{n}</button>' for j,n,c,_ in JOURNEYS)
     sch=f'<div class="maptools">{lg}<button type="button" class="lb play" id="playroutes">▶ 播放示意路线</button></div><p class="maphint">👉 手机上可左右滑动示意图</p><div class="mapscroll" id="bigmap">{actsmap(INFO)}</div><div id="cityinfo" class="cityinfo" aria-live="polite">点按示意图上的城市，查看使徒行传中发生在那里的事。</div>'
     hist=("<p>"+md("左侧／上方是 Natural Earth 公有领域底图（离线可用），路线为示意线。右侧／下方是可缩放的在线实景图，可在 OpenStreetMap、CARTO、Esri 卫星／地形／街道、OpenTopoMap 等来源间切换；某一源失败会自动改换下一个。更完整的行省、大道、海路、城市考古、犹太离散与希腊罗马宗教，见")+
           '<a href="culture.html">地理·历史·文化</a>。</p>')
-    b.append(f'<h2 id="h3">三、地图：从耶路撒冷到罗马</h2>'+mappair("overview","从耶路撒冷到罗马",sch,hist,play=True,caption="Natural Earth 底图（公有领域，离线可用）。点图例可开关路线；彩色圆点沿路线移动。"))
+    b.append(f'<h2 id="h3">四、地图：从耶路撒冷到罗马</h2>'+mappair("overview","从耶路撒冷到罗马",sch,hist,play=True,caption="Natural Earth 底图（公有领域，离线可用）。点图例可开关路线；彩色圆点沿路线移动。"))
     b.append(callout("mem","记四条线的颜色","青绿＝早期扩展（徒1–12）；金＝第一次旅行；蓝＝第二次（入欧洲）；绿＝第三次（以弗所）；玫红＝被押往罗马。终点不是帝国归信，而是道已到达「地极」。"))
-    b.append('<h2 id="h4">四、地理与文化区域</h2><div class="tbl"><table><thead><tr><th>地区</th><th>主要城市</th><th>章</th><th>社会文化特征</th><th>宗教环境</th></tr></thead><tbody>'+"".join(f'<tr><td><b>{a}</b></td><td>{c}</td><td>{d}</td><td>{e}</td><td>{f}</td></tr>' for a,c,d,e,f in REG)+'</tbody></table></div>')
-    b.append('<h2 id="h5">五、罗马与犹太官员：历史锚点</h2><div class="tbl"><table><thead><tr><th>人物</th><th>职位</th><th>在任</th><th>在使徒行传中</th></tr></thead><tbody>'+"".join(f'<tr><td><b>{a}</b></td><td>{c}</td><td>{d}</td><td>{e}</td></tr>' for a,c,d,e in OFF)+'</tbody></table></div><p class="note">路加对官衔的精确使用（方伯 proconsul、地方官 politarch、亚细亚的首领 Asiarch、岛长 prōtos）已被铭文一一证实，显示他是可靠的历史学家（William Ramsay 的结论）。</p>')
-    b.append('<h2 id="h6">六、真实世界的十个关键词</h2><div class="kws">'+"".join(f'<div class="kwc glass reveal"><span>{a}</span><b>{c}</b><p>{md(d)}</p></div>' for a,c,d in KW)+'</div>')
+    b.append('<h2 id="h4">五、地理与文化区域</h2><div class="tbl"><table><thead><tr><th>地区</th><th>主要城市</th><th>章</th><th>社会文化特征</th><th>宗教环境</th></tr></thead><tbody>'+"".join(f'<tr><td><b>{a}</b></td><td>{c}</td><td>{d}</td><td>{e}</td><td>{f}</td></tr>' for a,c,d,e,f in REG)+'</tbody></table></div>')
+    b.append('<h2 id="h5">六、罗马与犹太官员：历史锚点</h2><div class="tbl"><table><thead><tr><th>人物</th><th>职位</th><th>在任</th><th>在使徒行传中</th></tr></thead><tbody>'+"".join(f'<tr><td><b>{a}</b></td><td>{c}</td><td>{d}</td><td>{e}</td></tr>' for a,c,d,e in OFF)+'</tbody></table></div><p class="note">路加对官衔的精确使用（方伯 proconsul、地方官 politarch、亚细亚的首领 Asiarch、岛长 prōtos）已被铭文一一证实，显示他是可靠的历史学家（William Ramsay 的结论）。</p>')
+    b.append('<h2 id="h6">七、真实世界的十个关键词</h2><div class="kws">'+"".join(f'<div class="kwc glass reveal"><span>{a}</span><b>{c}</b><p>{md(d)}</p></div>' for a,c,d in KW)+'</div>')
     return "".join(b)
 def gantt():
     R=[("1–2",30,30.5,"#f5b942"),("3–5",30,33,"#f5b942"),("6–7",33,34,"#f5b942"),("8",34,35,"#3fd39a"),("9",34,37,"#3fd39a"),("10–11",38,44,"#3fd39a"),("12",44,44.6,"#3fd39a"),

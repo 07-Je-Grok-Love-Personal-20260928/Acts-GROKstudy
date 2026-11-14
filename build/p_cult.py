@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from common import md, esc, cq, verse_card, callout
 from maps_ui import (mappair, concept_geo, path_schematic, diaspora_schematic,
-                     religion_schematic, ring_schematic)
+                     religion_schematic, ring_schematic, thematic_pair)
+from maps_extra import JOURNEY_SCH
 from geo import JOURNEYS, EARLY
 
 def _hist(ps):
@@ -51,7 +52,7 @@ def build():
     }
     kinds={"j1":"land","j2":"land","j3":"land","j4":"sea"}
     for jid,name,col,_ in JOURNEYS:
-        sch=path_schematic(name,jstops[jid],col,kinds[jid])
+        sch=JOURNEY_SCH[jid]() if jid in JOURNEY_SCH else path_schematic(name,jstops[jid],col,kinds[jid])
         b.append(mappair(jid,name,sch,_hist(jnotes[jid]),play=True))
 
     # 4 provinces
@@ -137,7 +138,17 @@ def build():
     b.append('<div class="tbl"><table><thead><tr><th>类型</th><th>地点</th><th>在使徒行传中的意义</th></tr></thead><tbody>'+
              "".join(f'<tr><td><b>{a}</b></td><td>{c}</td><td>{d}</td></tr>' for a,c,d in REL)+'</tbody></table></div>')
 
-    b.append('<h2 id="c-vid">九、可自由使用的影像</h2>')
+    b.append('<h2 id="c-early2">九、早期专线：腓利、扫罗、彼得、安提阿</h2>')
+    b.append('<p class="note">四条专线把徒 8–11 的越界写清楚：每一幅都是离线情景图＋多源实景图。播放按钮可按故事顺序画出路线。</p>')
+    for mid in ("philip","saul","peter","scatter"):
+        b.append(thematic_pair(mid))
+    b.append('<h2 id="c-cityplan">十、圣城平面与亚细亚七教会</h2>')
+    b.append(thematic_pair("jercity"))
+    b.append(thematic_pair("asia7"))
+    b.append('<h2 id="c-roads2">十一、厄纳齐亚大道、船难与亚比亚大道</h2>')
+    for mid in ("egnatia","shipwreck","appia"):
+        b.append(thematic_pair(mid))
+    b.append('<h2 id="c-vid">十二、可自由使用的影像</h2>')
     b.append('<p class="note">短片与照片来自维基共享资源（CC BY / CC BY-SA），已在本站留下副本；即使外部网络被拦，图片与视频仍可在本页播放。示意图与文字不依赖这些文件。</p>')
     b.append("""<div class="media-grid">
 <figure class="media glass">
