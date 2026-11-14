@@ -298,7 +298,18 @@ document.addEventListener('pointerover',function(e){
   var a=e.target.closest&&e.target.closest('a[href]'); if(a)prefetch(a.getAttribute('href'));
 },true);
 (function(){
-  var idle=window.requestIdleCallback||function(f){setTimeout(f,400)};
-  idle(function(){ $$('.pn a, .toc-site a, .mainnav a').forEach(function(a){prefetch(a.getAttribute('href'))}); });
+  /* Only prev/next, and only after first paint has had a long quiet window.
+     Prefetching every nav page on idle contended with LCP on slow mobile. Hover still prefetches any link. */
+  var start=function(){
+    var hrefs=[], seen={};
+    $$('.pn a').forEach(function(a){
+      var h=(a.getAttribute('href')||'').split('#')[0];
+      if(h && !seen[h]){ seen[h]=1; hrefs.push(h); }
+    });
+    hrefs.forEach(function(h,i){ setTimeout(function(){ prefetch(h); }, i*700); });
+  };
+  var delay=function(){ setTimeout(start, 3500); };
+  if(document.readyState==='complete') delay();
+  else addEventListener('load', delay);
 })();
 })();
