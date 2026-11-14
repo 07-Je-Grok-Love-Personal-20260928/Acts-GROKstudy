@@ -1,290 +1,652 @@
 {
- "390/bible.html": {
+ "390x844/bible.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/creeds.html": {
+ "390x844/creeds.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/doctrine.html": {
+ "390x844/culture.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/history.html": {
+ "390x844/doctrine.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/index.html": {
+ "390x844/history.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/intro.html": {
+ "390x844/index.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/jerusalem.html": {
+ "390x844/intro.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/memory.html": {
+ "390x844/jerusalem.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/missions.html": {
+ "390x844/memory.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/rome.html": {
+ "390x844/missions.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/samaria.html": {
+ "390x844/rome.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "390/sources.html": {
+ "390x844/samaria.html": {
   "sw": 390,
   "vw": 390,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "phone"
  },
- "768/bible.html": {
+ "390x844/sources.html": {
+  "sw": 390,
+  "vw": 390,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "phone"
+ },
+ "844x390/bible.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/creeds.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/culture.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/doctrine.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/history.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/index.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/intro.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/jerusalem.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/memory.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/missions.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/rome.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/samaria.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "844x390/sources.html": {
+  "sw": 844,
+  "vw": 844,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "phone-land"
+ },
+ "768x1024/bible.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/creeds.html": {
+ "768x1024/creeds.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/doctrine.html": {
+ "768x1024/culture.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/history.html": {
+ "768x1024/doctrine.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/index.html": {
+ "768x1024/history.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/intro.html": {
+ "768x1024/index.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/jerusalem.html": {
+ "768x1024/intro.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/memory.html": {
+ "768x1024/jerusalem.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/missions.html": {
+ "768x1024/memory.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/rome.html": {
+ "768x1024/missions.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/samaria.html": {
+ "768x1024/rome.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "768/sources.html": {
+ "768x1024/samaria.html": {
   "sw": 768,
   "vw": 768,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
  },
- "1440/bible.html": {
+ "768x1024/sources.html": {
+  "sw": 768,
+  "vw": 768,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "tablet"
+ },
+ "1024x768/bible.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/creeds.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/culture.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/doctrine.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/history.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/index.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/intro.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/jerusalem.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/memory.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/missions.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/rome.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/samaria.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1024x768/sources.html": {
+  "sw": 1024,
+  "vw": 1024,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "tablet-land"
+ },
+ "1440x900/bible.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/creeds.html": {
+ "1440x900/creeds.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/doctrine.html": {
+ "1440x900/culture.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/history.html": {
+ "1440x900/doctrine.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/index.html": {
+ "1440x900/history.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/intro.html": {
+ "1440x900/index.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/jerusalem.html": {
+ "1440x900/intro.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/memory.html": {
+ "1440x900/jerusalem.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/missions.html": {
+ "1440x900/memory.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/rome.html": {
+ "1440x900/missions.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/samaria.html": {
+ "1440x900/rome.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  },
- "1440/sources.html": {
+ "1440x900/samaria.html": {
   "sw": 1440,
   "vw": 1440,
   "off": [],
   "clip": [],
   "hdr": [],
-  "errs": []
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
+ },
+ "1440x900/sources.html": {
+  "sw": 1440,
+  "vw": 1440,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "desktop"
  }
 }

@@ -1,4 +1,4 @@
-/* 使徒行传深读 GROKstudy v1.0.0 */
+/* 使徒行传深读 GROKstudy v2.0.0 */
 (function(){
 "use strict";
 var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
@@ -136,4 +136,16 @@ if(dEl){
 }
 /* draw svg in twoage */
 $$('.twoage').forEach(function(f){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$$('.draw',f).forEach(function(d){d.classList.add('in')});o.disconnect()}})});o.observe(f)});
+/* Lenis: optional smooth 'cloud' scroll; skipped when user prefers reduced motion */
+(function(){
+  if(!window.Lenis)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  try{
+    html.classList.add('has-lenis');
+    var lenis=new Lenis({lerp:.14,smoothWheel:true,wheelMultiplier:.9,syncTouch:false});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
+    requestAnimationFrame(raf);
+    window.__lenis=lenis;
+  }catch(e){html.classList.remove('has-lenis')}
+})();
 })();

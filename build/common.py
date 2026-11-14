@@ -2,7 +2,7 @@
 import json, re, html as H
 from bible import verses
 CCI = "/workspace/cci"
-VER = "v1.0.0"; DATE = "2026-10-31"; ASSET_V = "20261031a"
+VER = "v2.0.0"; DATE = "2026-11-14"; ASSET_V = "20261114a"
 def strip(t): return re.sub(r'\^\d+', '', t)
 _c = json.load(open(f"{CCI}/creeds.json")); _h = json.load(open(f"{CCI}/heidelberg.json"))
 _b = json.load(open(f"{CCI}/belgic.json")); _d = json.load(open(f"{CCI}/dort.json"))
@@ -67,13 +67,22 @@ def md(s):
     s = re.sub(r'!!(.+?)!!', r'<span class="hard">\1</span>', s)
     s = re.sub(r'==(.+?)==', r'<span class="cov">\1</span>', s)
     s = re.sub(r'\[\[(.+?)\]\]', r'<span class="term">\1</span>', s)
+    s = re.sub(r'__(.+?)__', r'<mark class="hl">\1</mark>', s)
+    s = re.sub(r'~~(.+?)~~', r'<span class="mk-w">\1</span>', s)
+    s = re.sub(r'\+\+(.+?)\+\+', r'<span class="mk-d">\1</span>', s)
     return s
 
 def verse_card(ref, cls=""):
     t = vtext(ref); assert t, ref
     return f'<figure class="kv {cls}"><blockquote>{esc(t)}</blockquote><figcaption>— {esc(ref)}（和合本）</figcaption></figure>'
 
+def callout(kind, title, body):
+    icon={"key":"⭐","hard":"⚠️","doc":"📖","app":"🌱","mem":"🧠"}[kind]
+    label={"key":"重点","hard":"难点","doc":"教义","app":"应用","mem":"记忆钩"}[kind]
+    return f'<aside class="co co-{kind}"><h4>{icon} {label} · {esc(title)}</h4><div>{md(body)}</div></aside>'
+
 NAV = [("index.html","🏠","首页总览"),("bible.html","📜","整本圣经·圣约"),("intro.html","🧭","导论·结构"),("history.html","🗺️","时间·故事·地图"),
+       ("culture.html","🏺","地理·历史·文化"),
        ("jerusalem.html","🔥","耶路撒冷 1–7"),("samaria.html","🌊","犹太撒玛利亚 8–12"),("missions.html","⛵","宣教旅行 13–19"),("rome.html","⛓️","往罗马 20–28"),
        ("doctrine.html","📘","改革宗专题"),("creeds.html","✝️","三大信经"),("memory.html","🧠","记忆·自测"),("sources.html","🔖","来源·校验")]
 
@@ -90,13 +99,14 @@ def toc_from(body):
     if open2: out.append('</ol></li>')
     out.append('</ol>'); return "".join(out)
 
-def page(fn, title, sub, body, hero_cls="", extra_head=""):
+def page(fn, title, sub, body, hero_cls="", extra_head="", maps=False):
     nav = "".join(f'<a href="{h}" class="{"on" if h==fn else ""}"><span>{i}</span>{t}</a>' for h, i, t in NAV)
     idx = [h for h, _, _ in NAV].index(fn)
     prv = NAV[idx-1] if idx > 0 else None; nxt = NAV[idx+1] if idx < len(NAV)-1 else None
     pn = '<nav class="pn">' + (f'<a href="{prv[0]}">← {prv[1]} {prv[2]}</a>' if prv else '<span></span>') + (f'<a href="{nxt[0]}">{nxt[1]} {nxt[2]} →</a>' if nxt else '<span></span>') + '</nav>'
+    maps_js = (f'<script src="assets/maps-data.js?v={ASSET_V}" defer></script><script src="assets/maps.js?v={ASSET_V}" defer></script>' if maps else '')
     return f'''<!doctype html><html lang="zh-CN" data-theme="night"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>{esc(title)} · 使徒行传深读 GROKstudy</title><meta name="description" content="{esc(sub)}">
+<title>{esc(title)+" · 使徒行传深读 GROKstudy" if fn!="index.html" else "使徒行传深读 GROKstudy"}</title><meta name="description" content="{esc(sub)}">
 <script>try{{var t=localStorage.getItem('acts-theme');if(t)document.documentElement.dataset.theme=t;if(localStorage.getItem('acts-toc')==='0')document.documentElement.classList.add('toc-off')}}catch(e){{}}</script>
 <link rel="stylesheet" href="assets/style.css?v={ASSET_V}">{extra_head}</head><body>
 <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div><div id="prog"></div>
@@ -106,11 +116,18 @@ def page(fn, title, sub, body, hero_cls="", extra_head=""):
 <aside id="toc" aria-label="本页目录"><div class="toc-h"><b>📑 本页目录</b><input id="tocq" type="search" placeholder="筛选目录…" aria-label="筛选目录"><button class="ib sm" id="tocx" aria-label="收起目录">✕</button></div>{toc_from(body)}</aside>
 <div id="scrim"></div>
 <main id="main"><section class="hero {hero_cls}"><div class="hero-in"><p class="eyebrow">使徒行传 · 教会历史 · 欧陆改革宗深读 · {VER}</p><h1>{title}</h1><p class="sub">{sub}</p></div></section>
-<div class="legend glass"><span class="key">重点</span><span class="hard">难点</span><span class="cov">圣约神学</span><span class="term">术语</span><button type="button" class="vs" data-t="点按蓝色经文出处，可弹出和合本经文。">经文出处</button><span class="lg-cci">📘📗📕 CCI 逐字引文</span></div>
+<div class="legend glass" id="legend"><b class="lg-t">笔记标记</b>
+<span class="key">重点</span><span class="hard">难点</span><span class="cov">圣约神学</span><span class="term">术语</span>
+<mark class="hl">底纹必记</mark><span class="mk-u">实线强调</span><span class="mk-d">虚线提示</span><span class="mk-w">波浪易错</span>
+<button type="button" class="vs" data-t="点按蓝色经文出处，可弹出和合本经文。">经文出处</button>
+<span class="lg-cci">📘📗📕 CCI 逐字引文</span>
+<span class="lg-co co-key">⭐ 重点框</span><span class="lg-co co-hard">⚠️ 难点框</span><span class="lg-co co-doc">📖 教义框</span><span class="lg-co co-app">🌱 应用框</span><span class="lg-co co-mem">🧠 记忆钩</span>
+</div>
 {body}
 {pn}
 <footer class="foot glass"><p>使徒行传深读 · acts-{DATE.replace("-","")}-{VER}-GROKstudy · 信经与信条引文逐字取自 <a href="https://ccifellowship.org/books/book-of-praise" target="_blank" rel="noopener">ccifellowship.org《敬拜手册》</a>（构建时程序核对）；经文为和合本。讲解、图表与口诀为本站学习整理。</p></footer>
 </main><button id="totop" class="fab" aria-label="回到顶部">↑</button>
+{maps_js}<script src="assets/vendor/lenis.min.js?v={ASSET_V}" defer></script>
 <script src="assets/app.js?v={ASSET_V}" defer></script></body></html>'''
 
 _W = json.load(open("/workspace/Westminster-Standards-GROKstudy/generator/data/standards.json"))
