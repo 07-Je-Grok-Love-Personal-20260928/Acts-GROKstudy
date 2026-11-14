@@ -648,5 +648,135 @@
   "errs": [],
   "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
   "view": "desktop"
+ },
+ "1920x1080/bible.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "整本圣经与圣约 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/creeds.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "三大普世信经 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/culture.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "地理 · 历史 · 文化 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/doctrine.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "改革宗专题 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/history.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "时间 · 故事 · 地图 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/index.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/intro.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "导论 · 结构 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/jerusalem.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "耶路撒冷 · 1–7 章 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/memory.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "记忆 · 自测 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/missions.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "宣教旅行 · 13–19 章 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/rome.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "往罗马 · 20–28 章 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/samaria.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "犹太 · 撒马利亚 · 8–12 章 · 使徒行传深读 GROKstudy",
+  "view": "wide"
+ },
+ "1920x1080/sources.html": {
+  "sw": 1920,
+  "vw": 1920,
+  "off": [],
+  "clip": [],
+  "hdr": [],
+  "errs": [],
+  "title": "来源 · 校验 · 使徒行传深读 GROKstudy",
+  "view": "wide"
  }
 }

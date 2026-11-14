@@ -21,21 +21,21 @@ def chapter(c):
     hards="".join(f'<details class="hardq"><summary>⚠️ {md(q)}</summary><p>{md(a)}</p></details>' for q,a in c.get("hard",[]))
     confs="".join(conf(x) for x in c.get("conf",[]))
     apps="".join(f'<li>{md(a)}</li>' for a in c["app"])
-    hard_blk=f'<aside class="co co-hard"><h4>⚠️ 难点 · 点开看改革宗解答</h4>{hards}</aside>' if hards else ''
+    hard_blk=f'<aside class="co co-hard"><h4 id="{i}-hd">⚠️ 难点 · 点开看改革宗解答</h4>{hards}</aside>' if hards else ''
     return f'''<section class="ep" id="{i}" style="--gc:{col}">
-<h2 id="{i}-t" class="ep-h"><span class="ei">{c["ic"]}</span>第 {c["no"]} 章 · {c["t"]} <small>{c["ref"]} · {sname}</small></h2>
+<h2 id="{i}-t" class="ep-h" data-toc="第 {c["no"]} 章 · {c["t"]}"><span class="ei">{c["ic"]}</span>第 {c["no"]} 章 · {c["t"]} <small>{c["ref"]} · {sname}</small></h2>
 <div class="ep-banner glass reveal"><div class="kwbox"><span class="kwl">钥字</span><span class="kw">{c["kw"]}</span></div><p class="core">💎 {md(c["core"])}</p>{verse_card(c["kv"])}</div>
 <div class="facts">{fx}</div>
 {chapter_pair(c)}
 <h3 id="{i}-st">📖 故事线：发生了什么</h3><div class="card glass"><p>{md(c["story"])}</p></div>{sbar(c["ol"])}<ol class="outline">{ol}</ol>
 <h3 id="{i}-bg">🏺 真实背景与文化</h3><div class="card glass culture"><p>{md(c["bg"])}</p></div>
 <h3 id="{i}-why">🔗 前因后果</h3>{flow(c["why"], c["res"])}
-<h3 id="{i}-bt">📜 圣经神学 · 圣约神学</h3><div class="two"><aside class="co co-doc"><h4>📖 教义 · 在整本圣经中</h4><div>{md(c["bt"])}</div></aside><aside class="co co-doc ct"><h4>🤝 圣约视角</h4><div>{md(c["ct"])}</div></aside></div>
-<h3 id="{i}-rf">🌷 欧陆改革宗要点</h3><div class="two"><aside class="co co-key"><h4>⭐ 重点 · 本质核心</h4><div>{md(c["rf"])}</div></aside>{hard_blk}</div>
+<h3 id="{i}-bt">📜 圣经神学 · 圣约神学</h3><div class="two"><aside class="co co-doc"><h4 id="{i}-btd">📖 教义 · 在整本圣经中</h4><div>{md(c["bt"])}</div></aside><aside class="co co-doc ct"><h4 id="{i}-ct">🤝 圣约视角</h4><div>{md(c["ct"])}</div></aside></div>
+<h3 id="{i}-rf">🌷 欧陆改革宗要点</h3><div class="two"><aside class="co co-key"><h4 id="{i}-core">⭐ 重点 · 本质核心</h4><div>{md(c["rf"])}</div></aside>{hard_blk}</div>
 {f'<div class="confs">{confs}</div>' if confs else ''}
 <h3 id="{i}-ap">🌱 应用与记忆</h3>
-<aside class="co co-app"><h4>🌱 应用 · 今天怎样活</h4><ul class="apps">{apps}</ul></aside>
-<aside class="co co-mem"><h4>🧠 记忆钩 · 第 {c["no"]} 章</h4><div>{md(c["mn"])}</div></aside>
+<aside class="co co-app"><h4 id="{i}-appx">🌱 应用 · 今天怎样活</h4><ul class="apps">{apps}</ul></aside>
+<aside class="co co-mem"><h4 id="{i}-mn">🧠 记忆钩 · 第 {c["no"]} 章</h4><div>{md(c["mn"])}</div></aside>
 <div class="flip" tabindex="0" role="button" aria-label="翻转记忆卡"><div class="fi-in"><div class="ff"><span>🧠 记忆钩</span><b>第 {c["no"]} 章 · {c["kw"]}</b><em>点按翻转</em></div><div class="fb"><p>{md(c["mn"])}</p></div></div></div>
 </section>'''
 def mindtree(title, chs):

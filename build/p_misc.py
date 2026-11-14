@@ -31,6 +31,7 @@ def sources(stats):
     b.append('<h2 id="s3">⚠️ 说明与局限</h2><ul class="src"><li>信条引文逐字取自 ccifellowship.org 的中文译本；其他译本措辞可能不同。</li><li>年代多为近似值（保守学者常见观点），学界有其他看法。</li><li>地图路线为依据使徒行传地名连成的示意线，不代表精确的古代道路。在线底图来自第三方图块服务，网络不稳时会自动切换；示意图始终离线可用。</li><li>讲解、口诀与图表为本站学习整理，不是任何教会的正式文件；权威在圣经，其次在教会公认的信条。</li><li>“🔊 朗读”使用浏览器内置语音合成（Web Speech API），音色因设备而异。</li></ul>')
     b.append("""<h2 id="s4">🗂️ 版本</h2><div class="tbl"><table><thead><tr><th>版本</th><th>日期（台北时间）</th><th>说明与当时链接</th></tr></thead><tbody>
 <tr><td>v1.0.0</td><td>2026-10-31</td><td>首次发布：28 章深读、圣约、导论、时间线与离线示意图、十二专题、三大信经与三项联合信条、记忆自测。仓库标记 <code>v1.0.0-20261031</code> 可随时恢复。当时镜像：<a href="https://07-je-grok-love-personal-20260928.github.io/Acts-GROKstudy/">GitHub Pages</a> · <a href="https://acts-20261031-v1-grokstudy.surge.sh">surge v1</a> · <a href="https://acts-20261031-v1-grokstudy.netlify.app">Netlify v1</a></td></tr>
-<tr><td>v2.0.0</td><td>2026-11-14</td><td>地图对（离线概念图＋多源实景图与自动回退）、新「地理·历史·文化」专页、笔记标记与标注框强化、滚动与渲染性能、更丰富的可视化；修复首页重复标题。当前镜像见 README。</td></tr>
+<tr><td>v2.0.0</td><td>2026-11-14</td><td>地图对（离线概念图＋多源实景图与自动回退）、新「地理·历史·文化」专页、笔记标记与标注框强化、滚动与渲染性能。标签 <code>v2.0.0-20261114</code>。镜像仍保留：<a href="https://acts-20261114-v2-grokstudy.surge.sh">surge v2</a> · <a href="https://acts-20261114-v2-grokstudy.netlify.app">Netlify v2</a>。</td></tr>
+<tr><td>v3.0.0</td><td>2026-11-14</td><td>三级可折叠目录（一级中文序号）、横向拖拽调宽（记忆宽度、双击复位）、滚动高亮当前节；去掉滚动层毛玻璃与默认 Lenis，改用原生滚动、预取与视图过渡。标签 <code>v3.0.0-20261114</code>。当前镜像见 README。</td></tr>
 </tbody></table></div>""")
     return "".join(b)

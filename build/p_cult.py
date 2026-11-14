@@ -106,7 +106,8 @@ def build():
     ]
     cards=""
     for n,k,a,t in CITIES:
-        cards+=f'<article class="citycard glass reveal"><h4>🏛 {esc(n)}</h4><p class="kicker">{esc(k)}</p><p>{md(a)}</p><p>{md(t)}</p></article>'
+        slug={"耶路撒冷":"jerusalem","凯撒利亚":"caesarea","安提阿（叙利亚）":"antioch","腓立比":"philippi","雅典":"athens","哥林多":"corinth","以弗所":"ephesus","罗马":"rome"}.get(n,"city")
+        cards+=f'<article class="citycard glass reveal" id="city-{slug}"><h4 id="city-{slug}-t">🏛 {esc(n)}</h4><p class="kicker">{esc(k)}</p><p>{md(a)}</p><p>{md(t)}</p></article>'
     b.append('<div class="citygrid">'+cards+'</div>')
     b.append(callout("mem","记忆钩：八座城的一件文物","耶路＝圣殿／公会；凯撒利亚＝彼拉多石与巡抚府；安提阿＝「基督徒」之名；腓立比＝殖民地与河边；雅典＝亚略巴古；哥林多＝迦流座；以弗所＝剧场与亚底米；罗马＝亚比亚大道与软禁。"))
 
@@ -147,12 +148,12 @@ def build():
   </div>
   <figcaption>以弗所遗址巡览（<a href="https://commons.wikimedia.org/wiki/File:Ephesus_Efes_Turkey_2015.webm" target="_blank" rel="noopener">Ephesus Efes Turkey 2015.webm</a>，Klapi，CC BY-SA 4.0）。剧场是徒 19 章暴动的舞台；亚底米神庙曾是古代世界七大奇迹之一。</figcaption>
 </figure>
-<figure class="media glass"><img src="assets/img/ephesus-theatre.jpg" alt="以弗所大剧场" width="1280" height="853" loading="lazy"><figcaption>以弗所大剧场（Furkan Akkurt，CC BY-SA 4.0）。</figcaption></figure>
-<figure class="media glass"><img src="assets/img/caesarea.jpg" alt="凯撒利亚希律圆形剧场" width="1280" height="853" loading="lazy"><figcaption>凯撒利亚滨海城的希律时期建筑（Godot13，CC BY-SA 4.0）。巡抚府在此，保罗被囚两年。</figcaption></figure>
-<figure class="media glass"><img src="assets/img/areopagus.jpg" alt="从卫城望亚略巴古" width="1280" height="853" loading="lazy"><figcaption>从卫城俯瞰亚略巴古（Jakub Hałun，CC BY 4.0）。保罗在此向雅典人讲论未识之神与复活（徒17）。</figcaption></figure>
-<figure class="media glass"><img src="assets/img/corinth-bema.jpg" alt="哥林多的迦流座" width="1280" height="853" loading="lazy"><figcaption>哥林多市中心的「座」（bema，Zde，CC BY-SA 4.0），传统上即迦流审判保罗之处（徒18:12-17）。</figcaption></figure>
-<figure class="media glass"><img src="assets/img/via-egnatia.jpg" alt="厄纳齐亚大道遗迹" width="1280" height="853" loading="lazy"><figcaption>厄纳齐亚大道遗迹（DocWoKav，CC BY-SA 4.0）。保罗入欧洲后，大体沿此道经腓立比、帖撒罗尼迦。</figcaption></figure>
-<figure class="media glass"><img src="assets/img/via-appia.jpg" alt="亚比亚大道" width="1280" height="853" loading="lazy"><figcaption>亚比亚大道（Kleuske，CC BY-SA 3.0）。弟兄出到亚比乌市与三馆迎接保罗（徒28:15）。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/ephesus-theatre.jpg" alt="以弗所大剧场" width="1280" height="853" loading="lazy" decoding="async"><figcaption>以弗所大剧场（Furkan Akkurt，CC BY-SA 4.0）。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/caesarea.jpg" alt="凯撒利亚希律圆形剧场" width="1280" height="853" loading="lazy" decoding="async"><figcaption>凯撒利亚滨海城的希律时期建筑（Godot13，CC BY-SA 4.0）。巡抚府在此，保罗被囚两年。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/areopagus.jpg" alt="从卫城望亚略巴古" width="1280" height="853" loading="lazy" decoding="async"><figcaption>从卫城俯瞰亚略巴古（Jakub Hałun，CC BY 4.0）。保罗在此向雅典人讲论未识之神与复活（徒17）。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/corinth-bema.jpg" alt="哥林多的迦流座" width="1280" height="853" loading="lazy" decoding="async"><figcaption>哥林多市中心的「座」（bema，Zde，CC BY-SA 4.0），传统上即迦流审判保罗之处（徒18:12-17）。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/via-egnatia.jpg" alt="厄纳齐亚大道遗迹" width="1280" height="853" loading="lazy" decoding="async"><figcaption>厄纳齐亚大道遗迹（DocWoKav，CC BY-SA 4.0）。保罗入欧洲后，大体沿此道经腓立比、帖撒罗尼迦。</figcaption></figure>
+<figure class="media glass"><img src="assets/img/via-appia.jpg" alt="亚比亚大道" width="1280" height="853" loading="lazy" decoding="async"><figcaption>亚比亚大道（Kleuske，CC BY-SA 3.0）。弟兄出到亚比乌市与三馆迎接保罗（徒28:15）。</figcaption></figure>
 </div>""")
     b.append(callout("app","读地图，是为了跟从主","把行省、大道与会堂记在心里，不是为了炫博学，而是为了更准确地听话：同一位主，曾走在这些路上，如今仍差遣祂的教会走向「地极」。我们的「地极」也许是邻舍、职场或另一门语言，逻辑与当日相同——圣灵、圣道、真实的地方。"))
     return "".join(b)

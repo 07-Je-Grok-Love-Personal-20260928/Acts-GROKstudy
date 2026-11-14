@@ -15,11 +15,40 @@ for(let i=0;i<hs.length;i++)for(let j=i+1;j<hs.length;j++){const a=hs[i],b=hs[j]
 res.off=res.off.slice(0,8);res.clip=res.clip.slice(0,8);return res}"""
 
 async def interact(pg):
-    # TOC toggle
+    # TOC open + expand/collapse levels + resize
+    w=pg.viewport_size["width"]
     btn=await pg.query_selector("#tocbtn")
     if btn:
-        await btn.click(); await pg.wait_for_timeout(200)
-        await btn.click(); await pg.wait_for_timeout(200)
+        if w<=1100:
+            await btn.click(); await pg.wait_for_timeout(200)
+        else:
+            # ensure TOC visible
+            off=await pg.evaluate("document.documentElement.classList.contains('toc-off')")
+            if off: await btn.click(); await pg.wait_for_timeout(150)
+        ex=await pg.query_selector("#toc-ex")
+        if ex: await ex.click(); await pg.wait_for_timeout(80)
+        # collapse then expand a level-1
+        tw=await pg.query_selector(".toc-page .tl1 > .toc-row .tw")
+        if tw:
+            await tw.click(); await pg.wait_for_timeout(80)
+            await tw.click(); await pg.wait_for_timeout(80)
+        rz=await pg.query_selector("#tocresizer")
+        if rz:
+            box=await rz.bounding_box()
+            if box:
+                x,y=box["x"]+box["width"]/2, box["y"]+40
+                await pg.mouse.move(x,y); await pg.mouse.down()
+                await pg.mouse.move(x+180,y,steps=4); await pg.mouse.up()
+                await pg.wait_for_timeout(80)
+                await pg.mouse.move(x,y); await pg.mouse.down()
+                await pg.mouse.move(x-260,y,steps=4); await pg.mouse.up()
+                await pg.wait_for_timeout(80)
+                await rz.dblclick(); await pg.wait_for_timeout(80)
+        cl=await pg.query_selector("#toc-cl")
+        if cl: await cl.click(); await pg.wait_for_timeout(60)
+        if ex: await ex.click(); await pg.wait_for_timeout(60)
+        if w<=1100:
+            await btn.click(); await pg.wait_for_timeout(150)
     # expand hard questions / details
     for i,el in enumerate(await pg.query_selector_all("details.hardq, details.intro, details")):
         if i>8: break
@@ -51,7 +80,7 @@ async def main():
     so=socket.socket(); so.bind(("127.0.0.1",0)); PORT=so.getsockname()[1]; so.close()
     srv=subprocess.Popen([sys.executable,"-m","http.server",str(PORT),"--bind","127.0.0.1","-d",D],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); time.sleep(0.6)
     rep={}; bad=0
-    views=[(390,844,"phone"),(844,390,"phone-land"),(768,1024,"tablet"),(1024,768,"tablet-land"),(1440,900,"desktop")]
+    views=[(390,844,"phone"),(844,390,"phone-land"),(768,1024,"tablet"),(1024,768,"tablet-land"),(1440,900,"desktop"),(1920,1080,"wide")]
     async with async_playwright() as p:
         b=await p.chromium.launch(executable_path=CHROME, args=["--no-sandbox","--disable-gpu"])
         for w,h,tag in views:
