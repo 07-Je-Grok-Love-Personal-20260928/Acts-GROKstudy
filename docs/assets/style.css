@@ -15,7 +15,7 @@ img,svg{max-width:100%}
 #prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--cov),var(--term));z-index:1210}
 .glass{background:color-mix(in srgb,var(--bg2) 82%,transparent);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 4px 16px rgba(0,0,0,.16)}
 /* header */
-.top{position:sticky;top:0;z-index:1200;height:var(--hh);display:flex;align-items:center;gap:10px;padding:0 14px;background:color-mix(in srgb,var(--bg) 92%,transparent);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:1200;height:var(--hh);display:flex;align-items:center;gap:10px;padding:0 14px;background:var(--bg);border-bottom:1px solid var(--line)}
 .brand{font-weight:800;color:var(--fg);white-space:nowrap;font-size:17px}.brand b{color:var(--gold);margin-left:2px}
 .mainnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0;margin-left:8px}.mainnav::-webkit-scrollbar{display:none}
 .mainnav a,.navdrop a{white-space:nowrap;color:var(--mut);padding:6px 10px;border-radius:10px;font-size:14px;display:flex;gap:4px;align-items:center}
@@ -386,6 +386,7 @@ html.toc-open .leaflet-control-container,html.toc-open .leaflet-tooltip{visibili
   html.toc-open .leaflet-top,
   html.toc-open .leaflet-bottom{visibility:hidden!important;pointer-events:none!important}
   html.toc-open .top{background:var(--bg)}
+  html.toc-open .fab{opacity:0!important;pointer-events:none!important}
   html.toc-open #tocwrap,html.toc-open #scrim{isolation:isolate}
 }
 
